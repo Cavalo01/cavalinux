@@ -2,8 +2,8 @@ echo "echo "Loading..."" >> ~/.bashrc
 echo "PS1=\"┌──(cavalinux@)-[~]\n└─# \"" >> ~/.bashrc
 echo "chmod +x *" >> ~/.bashrc
 echo "chmod -R 777 *" >> ~/.bashrc
-echo "chmod +x /data/data/com.termux/files/home"
-echo "chmod -R 777 /data/data/com.termux/files/home"
+echo "chmod +x /data/data/com.termux/files/home" >> ~/.bashrc
+echo "chmod -R 777 /data/data/com.termux/files/home" >> ~/.bashrc
 echo "cd / && cd storage && cd emulated && cd 0" >> ~/.bashrc
 echo "alias whoami='echo cavalinux'" >> ~/.bashrc
 echo "alias showfiles='ls'" >> ~/.bashrc
