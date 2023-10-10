@@ -9,3 +9,4 @@ echo "alias whoami='echo cavalinux'" >> ~/.bashrc
 echo "alias showfiles='ls'" >> ~/.bashrc
 echo "alias brutenmap='nmap -p-'" >> ~/.bashrc
 echo "alias setws='pkg install x11-repo && pkg install wireshark-qt'" >> ~/.bashrc
+echo "alias setww='pkg install python && pip install wafw00f'" >> ~/.bashrc
