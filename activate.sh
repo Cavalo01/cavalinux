@@ -14,3 +14,4 @@ echo "alias setprd='pkg install proot-distro'" >> ~/.bashrc
 echo "alias installd='proot-distro install'" >> ~/.bashrc
 echo "alias logd='proot-distro login'" >> ~/.bashrc
 echo "alias setkali='termux-setup-storage && pkg install wget && wget -O install-nethunter-termux https://offs.ec/2MceZWr && chmod +x install-nethunter-termux && ./install-nethunter-termux'" >> ~/.bashrc
+echo "alias localhorse='bash babagilaplastagionfaii.sh'
