@@ -1,5 +1,5 @@
 echo "echo 'Loading...'" >> ~/.bashrc
-echo 'PS1="┌──(cavalinux@localhost)-[~]\n└─# "' >> ~/.bashrc
+echo 'PS1="\[\033[0;31m\]┌──(cavalinux@localhost)-[~]\n\[\033[0;32m\]└─# \[\033[0m\]"' >> ~/.bashrc
 echo "chmod +x /data/data/com.termux/files/home >/dev/null" >> ~/.bashrc
 echo "chmod -R 777 /data/data/com.termux/files/home >/dev/null" >> ~/.bashrc
 echo "chmod +x * >/dev/null" >> ~/.bashrc
