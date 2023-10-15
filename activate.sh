@@ -2,6 +2,8 @@ echo "echo 'Loading...'" >> ~/.bashrc
 echo 'PS1="\[\033[1;31m\]┌──(cavalinux@localhost)-[~]\n\[\033[0;31m\]└─# \[\033[0m\]"' >> ~/.bashrc
 echo "chmod +x /data/data/com.termux/files/home > /dev/null 2>&1" >> ~/.bashrc
 echo "chmod -R 777 /data/data/com.termux/files/home > /dev/null 2>&1" >> ~/.bashrc
+echo "chmod +x * > /dev/null 2>&1" >> ~/.bashrc
+echo "chmod -R 777 * > /dev/null 2>&1" >> ~/.bashrc
 echo "cd / && cd storage && cd emulated && cd 0" >> ~/.bashrc
 echo "alias whoami='echo cavalinux'" >> ~/.bashrc
 echo "alias showfiles='ls'" >> ~/.bashrc
@@ -16,4 +18,3 @@ echo 'alias boost="find . -type f \( -name \"*.tmp\" -o -name \"*.cache\" -o -na
 echo 'alias setvb="pkg install tmux >> /dev/null && echo Downloading virtualbox..."' >> ~/.bashrc
 echo 'alias virtualbox="tmux"' >> ~/.bashrc
 echo "alias destroyall='echo \"Wait there! This action will destroy your files and should only be used in emergency cases. Continue? (y/n)\" && read -r ans && [ \"\$ans\" == \"y\" ] && shred -f -n 3 * || echo \"Canceled.\"'" >> ~/.bashrc
-echo "alias update='cd && > .bashrc && bash && rm -r cavalinux && git clone https://github.com/Cavalo01/cavalinux && cd cavalinux && bash activate.sh && exit'" >> ~/.bashrc
