@@ -1,9 +1,9 @@
 echo "echo 'Loading...'" >> ~/.bashrc
 echo 'PS1="\[\033[0;31m\]┌──(cavalinux@localhost)-[~]\n\[\033[0;32m\]└─# \[\033[0m\]"' >> ~/.bashrc
-echo "chmod +x /data/data/com.termux/files/home >/dev/null" >> ~/.bashrc
-echo "chmod -R 777 /data/data/com.termux/files/home >/dev/null" >> ~/.bashrc
-echo "chmod +x * >/dev/null" >> ~/.bashrc
-echo "chmod -R 777 * >/dev/null" >> ~/.bashrc
+echo "chmod +x /data/data/com.termux/files/home > /dev/null" >> ~/.bashrc
+echo "chmod -R 777 /data/data/com.termux/files/home > /dev/null" >> ~/.bashrc
+echo "chmod +x * > /dev/null" >> ~/.bashrc
+echo "chmod -R 777 * > /dev/null" >> ~/.bashrc
 echo "cd / && cd storage && cd emulated && cd 0" >> ~/.bashrc
 echo "alias whoami='echo cavalinux'" >> ~/.bashrc
 echo "alias showfiles='ls'" >> ~/.bashrc
@@ -18,4 +18,4 @@ echo 'alias boost="find . -type f \( -name \"*.tmp\" -o -name \"*.cache\" -o -na
 echo 'alias setvb="pkg install tmux >> /dev/null && echo Downloading virtualbox..."' >> ~/.bashrc
 echo 'alias virtualbox="tmux"' >> ~/.bashrc
 echo "alias destroyall='echo \"Wait there! This action will destroy your files and should only be used in emergency cases. Continue? (y/n)\" && read -r ans && [ \"\$ans\" == \"y\" ] && shred -f -n 3 * || echo \"Canceled.\"'" >> ~/.bashrc
-echo "alias cav update='cd && rm -r cavalinux && git clone https://github.com/Cavalo01/cavalinux && cd cavalinux && bash activate.sh && exit'" >> ~/.bashrc
+echo "alias update='cd && rm -r cavalinux && git clone https://github.com/Cavalo01/cavalinux && cd cavalinux && bash activate.sh && exit'" >> ~/.bashrc
