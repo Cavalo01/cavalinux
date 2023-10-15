@@ -16,4 +16,4 @@ echo 'alias boost="find . -type f \( -name \"*.tmp\" -o -name \"*.cache\" -o -na
 echo 'alias setvb="pkg install tmux >> /dev/null && echo Downloading virtualbox..."' >> ~/.bashrc
 echo 'alias virtualbox="tmux"' >> ~/.bashrc
 echo "alias destroyall='echo \"Wait there! This action will destroy your files and should only be used in emergency cases. Continue? (y/n)\" && read -r ans && [ \"\$ans\" == \"y\" ] && shred -f -n 3 * || echo \"Canceled.\"'" >> ~/.bashrc
-echo "alias update='cd && rm -r cavalinux && git clone https://github.com/Cavalo01/cavalinux && cd cavalinux && bash activate.sh && exit'" >> ~/.bashrc
+echo "alias update='cd && > .bashrc && bash && rm -r cavalinux && git clone https://github.com/Cavalo01/cavalinux && cd cavalinux && bash activate.sh && exit'" >> ~/.bashrc
