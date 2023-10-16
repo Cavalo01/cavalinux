@@ -19,5 +19,4 @@ echo 'alias setvb="pkg install tmux >> /dev/null && echo Downloading virtualbox.
 echo 'alias virtualbox="tmux"' >> ~/.bashrc
 echo "alias destroyall='echo \"Wait there! This action will destroy your files and should only be used in emergency cases. Continue? (y/n)\" && read -r ans && [ \"\$ans\" == \"y\" ] && shred -f -n 3 * || echo \"Canceled.\"'" >> ~/.bashrc
 echo "alias setnslp='pkg install dnsutils'" >> ~/.bashrc
-echo "alias setsqlmap='git clone https://github.com/sqlmapproject/sqlmap && mv sqlmap* /storage/emulated/0 && echo Success With Setting SQLMap! Use: python3 sqlmap.py -u example.org'" >> ~/.bashrc
-echo "alias setwordlist='wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt > /dev/null 2>&1 && mv 10-million-password-list-top-1000000.txt wordlist.txt & echo Downloading Wordlist... Size: 8 MB, Name: wordlist.txt'" >> ~/.bashrc
+echo "alias setwordlist='wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt > /dev/null 2>&1 && mv 10-million-password-list-top-1000000.txt wordlist.txt && echo Wordlist downloaded! Size: 8 MB, Name: wordlist.txt'" >> ~/.bashrc
