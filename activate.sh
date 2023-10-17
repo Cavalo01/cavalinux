@@ -44,17 +44,18 @@ echo '      if [ "$found" -eq 0 ]; then' >> ~/.bashrc
 echo '        echo "No FTP server found."' >> ~/.bashrc
 echo '      fi' >> ~/.bashrc
 echo '      ;;' >> ~/.bashrc
-echo '    2)' >> ~/.bashrc
-echo '      read -p "Enter the target website (Example: example.com, DONT USE HTTPS:// OR HTTP://\!): " site' >> ~/.bashrc
-echo '      result=$(nmap -p- "$site" | grep "ftp" | grep -o "([0-9]\+\/tcp)" | awk -F'/' '{print $1}')' >> ~/.bashrc
-echo '      if [ "$result" ]; then' >> ~/.bashrc
-echo '        echo "FTP Port found! $result"' >> ~/.bashrc
-echo '      else' >> ~/.bashrc
-echo '        echo "No FTP port found."' >> ~/.bashrc
-echo '      fi' >> ~/.bashrc
-echo '      ;;' >> ~/.bashrc
-echo '    *)' >> ~/.bashrc
-echo '      echo "Invalid option."' >> ~/.bashrc
-echo '      ;;' >> ~/.bashrc
-echo '  esac' >> ~/.bashrc
+echo '  2)' >> ~/.bashrc
+echo '    read -p "Enter the target website (Example: example.com, DONT USE HTTPS:// OR HTTP://\!): " site' >> ~/.bashrc
+echo '    result=$(nmap -p- "$site" | grep "ftp" | grep -o "([0-9]+/tcp)" | awk -F/ '\''{print $1}'\'')' >> ~/.bashrc
+echo '    if [ "$result" ]; then' >> ~/.bashrc
+echo '      echo "FTP Port found! $result"' >> ~/.bashrc
+echo '    else' >> ~/.bashrc
+echo '      echo "No FTP port found."' >> ~/.bashrc
+echo '    fi' >> ~/.bashrc
+echo '    ;;' >> ~/.bashrc
+echo '  *)' >> ~/.bashrc
+echo '    echo "Invalid option. Exiting."' >> ~/.bashrc
+echo '    ;;' >> ~/.bashrc
+echo 'esac' >> ~/.bashrc
 echo '}' >> ~/.bashrc
+
