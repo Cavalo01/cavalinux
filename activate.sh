@@ -24,7 +24,8 @@ echo "alias setmsf='pkg install git ruby && git clone https://github.com/rapid7/
 echo "alias msfconsole='./msfconsole'" >> ~/.bashrc
 echo '
 bruteftp() {
-  read -p "Enter the target site (without '\''ftp://, http:// or https://\''): " target_site
+echo "Welcome to BruteFTP!"
+  read -p "Insert your target (without '\''ftp://, http:// or https://\''): " target_site
 
   common_ftp_ports=("21" "22" "80" "443")  
 
@@ -44,10 +45,53 @@ bruteftp() {
     "ftptools" "ftpserver1" "ftpserver2" "ftpserver3" "ftpserver4" "ftpserver5" 
     "ftpserver6" "ftpserver7" "ftpserver8" "ftpserver9" "ftphost1" "ftphost2" 
     "ftphost3" "ftphost4" "ftphost5" "ftphost6" "ftphost7"
+    "filetransfer"
+    "uploadfiles"
+    "mydata"
+    "dataaccess"
+    "filevault"
+    "dataportal"
+    "docexchange"
+    "sharedrive"
+    "quickconnect"
+    "datahubpro"
+    "transferdata"
+    "filebox"
+    "speedyshare"
+    "datahub"
+    "cloudftpx"
+    "rapidconnect"
+    "globalfile"
+    "powerupload"
+    "superfile"
+    "dataelite"
+    "proftpx"
+    "fastshare"
+    "dataxpress"
+    "uptoload"
+    "maxfile"
+    "datasend"
+    "datasyncpro"
+    "syncvault"
+    "filestore"
+    "dataxpresspro"
+    "swiftfileshare"
+    "turboconnect"
+    "rapidstorage"
+    "prodatahub"
+    "uptodata"
+    "maxtransfer"
+    "datahubplus"
+    "cloudftpxpro"
+    "dataxpressshare"
+    "sharedata"
+    "datasyncplus"
+    "rapidsharepro"
+    "swiftupload"
   )
 
   for server in "${common_ftp_servers[@]}"; do
-    for port in "${common_ftp_ports[@]}"; do
+for port in "${common_ftp_ports[@]}"; do
       ftp_server="${server}.${target_site}"
       if nc -z -w 5 "$ftp_server" "$port"; then
         echo "FTP Server Found on port $port! $ftp_server"
@@ -56,6 +100,6 @@ bruteftp() {
     done
   done
 
-  echo "Brute FTP Dont found anything. Thats all you know."
+  echo "No FTP Server Found."
 }
 ' >> ~/.bashrc
