@@ -46,7 +46,7 @@ echo '      fi' >> ~/.bashrc
 echo '      ;;' >> ~/.bashrc
 echo '  2)' >> ~/.bashrc
 echo '    read -p "Enter the target website (Example: example.com, DONT USE HTTPS:// OR HTTP://\!): " site' >> ~/.bashrc
-echo '    result=$(nmap -p- "$site" | grep "ftp" | grep -o "([0-9]+/tcp)" | awk -F/ '\''{print $1}'\'')' >> ~/.bashrc
+echo '    result=$(nmap "$site" | grep "ftp" | grep -o "([0-9]+/tcp)" | awk -F/ '\''{print $1}'\'')' >> ~/.bashrc
 echo '    if [ "$result" ]; then' >> ~/.bashrc
 echo '      echo "FTP Port found! $result"' >> ~/.bashrc
 echo '    else' >> ~/.bashrc
