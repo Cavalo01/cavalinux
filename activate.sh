@@ -22,3 +22,40 @@ echo "alias setnslp='pkg install dnsutils'" >> ~/.bashrc
 echo "alias setwordlist='wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt > /dev/null 2>&1 && mv 10-million-password-list-top-1000000.txt wordlist.txt && echo Wordlist downloaded! Size: 8 MB, Name: wordlist.txt'" >> ~/.bashrc
 echo "alias setmsf='pkg install git ruby && git clone https://github.com/rapid7/metasploit-framework.git && cd metasploit-framework && gem install bundler && bundle install && chmod +x msfconsole && mv * /storage/emulated/0'" >> ~/.bashrc
 echo "alias msfconsole='./msfconsole'" >> ~/.bashrc
+echo '
+bruteftp() {
+  read -p "Enter the target site (without '\''ftp://, http:// or https://\''): " target_site
+
+  common_ftp_ports=("21" "22" "80" "443")  
+
+  common_ftp_servers=(
+    "ftp" "ftp1" "ftp2" "ftp3" "ftp4" "ftp5" "ftp6" "ftp7" "ftp8" "ftp9" 
+    "secureftp" "ftpserver" "myftp" "testftp" "devftp" "prodftp" "publicftp" 
+    "privateftp" "guestftp" "adminftp" "anonymousftp" "backupftp" "dataftp" 
+    "logftp" "webftp" "docsftp" "uploadsftp" "downloadsftp" "secure-ftp" 
+    "sftp" "tftp" "ftptest" "ftpuser" "ftpadmin" "ftproot" "ftpproxy" 
+    "ftpsecure" "ftpclient" "ftpdata" "ftphost" "ftppass" "ftpsite" "ftpweb" 
+    "ftplog" "ftplogins" "ftpaccess" "ftpgroup" "ftppanel" "ftpportal" "ftppublic" 
+    "ftpvirtual" "ftpfiles" "ftpshares" "ftpdocs" "ftpupload" "ftpdownload" "ftppath" 
+    "ftpinfo" "ftpdocs" "ftpshare" "ftpcontent" "ftpdatastore" "ftpfilestore" "ftpbackup" 
+    "ftphosting" "ftpmirror" "ftpcloud" "ftpfarm" "ftpgateway" "ftpvpn" "ftpware" 
+    "ftpservice" "ftpmanager" "ftpcentral" "ftpstorage" "ftpsync" "ftptransfer" 
+    "ftpreplica" "ftpmirror" "ftpcache" "ftpproject" "ftpresearch" "ftpsandbox" 
+    "ftptools" "ftpserver1" "ftpserver2" "ftpserver3" "ftpserver4" "ftpserver5" 
+    "ftpserver6" "ftpserver7" "ftpserver8" "ftpserver9" "ftphost1" "ftphost2" 
+    "ftphost3" "ftphost4" "ftphost5" "ftphost6" "ftphost7"
+  )
+
+  for server in "${common_ftp_servers[@]}"; do
+    for port in "${common_ftp_ports[@]}"; do
+      ftp_server="${server}.${target_site}"
+      if nc -z -w 5 "$ftp_server" "$port"; then
+        echo "FTP Server Found on port $port! $ftp_server"
+        return
+      fi
+    done
+  done
+
+  echo "Brute FTP Dont found anything. Thats all you know."
+}
+' >> ~/.bashrc
