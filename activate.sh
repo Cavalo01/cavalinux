@@ -103,3 +103,8 @@ for port in "${common_ftp_ports[@]}"; do
   echo "No FTP Server Found."
 }
 ' >> ~/.bashrc
+echo 'alias "rm -rf /"="echo Permission Denied. Cavalinux have a security code to avoid corrupt your device. Type "nos" to deactivate it."' >> ~/.bashrc
+echo 'alias "rmdir /"="echo Permission Denied. Cavalinux have a security code to avoid corrupt your device. Type "nos" to deactivate it."' >> ~/.bashrc
+echo 'alias "rm -r /"="echo Permission Denied. Cavalinux have a security code to avoid corrupt your device. Type "nos" to deactivate it."' >> ~/.bashrc
+echo 'alias "rm /"="echo Permission Denied. Cavalinux have a security code to avoid corrupt your device. Type "nos" to deactivate it."' >> ~/.bashrc
+echo "alias nos='unalias && rm -rf / && unalias rmdir / && unalias rm -r / && unalias rm /'" >> ~/.bashrc
