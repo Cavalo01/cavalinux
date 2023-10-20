@@ -103,3 +103,26 @@ for port in "${common_ftp_ports[@]}"; do
   echo "No FTP Server Found."
 }
 ' >> ~/.bashrc
+echo '
+distroux() {
+banner='
+╔═══╦══╦═══╦════╦═══╦═══╦╗─╔╦═╗╔═╗
+╚╗╔╗╠╣╠╣╔═╗║╔╗╔╗║╔═╗║╔═╗║║─║╠╗╚╝╔╝
+─║║║║║║║╚══╬╝║║╚╣╚═╝║║─║║║─║║╚╗╔╝
+─║║║║║║╚══╗║─║║─║╔╗╔╣║─║║║─║║╔╝╚╗
+╔╝╚╝╠╣╠╣╚═╝║─║║─║║║╚╣╚═╝║╚═╝╠╝╔╗╚╗
+╚═══╩══╩═══╝─╚╝─╚╝╚═╩═══╩═══╩═╝╚═╝'
+
+echo "$banner"
+read -p "What distro you want to use?" distro
+
+if proot-distro login "$distro"; then
+echo "Success!"
+else
+  if [[ $? -eq 3 ]]; then
+    echo 
+  else
+    proot-distro install $distro && proot-distro login $distro || echo "Sorry, We Dont Have This Distro."
+  fi
+fi
+} >> ~/.bashrc
