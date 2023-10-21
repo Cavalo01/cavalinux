@@ -103,17 +103,4 @@ for port in "${common_ftp_ports[@]}"; do
   echo "No FTP Server Found."
 }
 ' >> ~/.bashrc
-echo '
-servelinch(){ 
-
-  read -p "Enter your target: " site
-
-  response=$(curl -I -s "$site" | grep "Server")
-
-  if [ -n "$response" ]; then
-    server_name=$(echo "$response" | awk '{print $2}')
-    echo "Server found successfully! Server: $server_name"
-  else
-    echo "No servers found."
-  fi
-} ' >> ~/.bashrc
+echo "alias servelinch='read -p "Enter Your Target:" site && curl -I $site | grep Server:'"
