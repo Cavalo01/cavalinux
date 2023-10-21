@@ -125,7 +125,7 @@ distroux() {
       proot-distro install $distro && proot-distro login $distro || echo "Sorry, We Dont Have This Distro."
     fi
   fi
-} >> ~/.bashrc
+} ' >> ~/.bashrc
 echo '
 servelinch(){ 
   echo " ____                      _ _            _     "
