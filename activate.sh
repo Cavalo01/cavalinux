@@ -55,65 +55,6 @@ bruteftp() {
     "sharedrive"
     "quickconnect"
     "datahubpro"
-    "transferdata"
-    "filebox"
-    "speedyshare"
-    "datahub"
-    "cloudftpx"
-    "rapidconnect"
-    "globalfile"
-    "powerupload"
-    "superfile"
-    "dataelite"
-    "proftpx"
-    "fastshare"
-    "dataxpress"
-    "uptoload"
-    "maxfile"
-    "datasend"
-    "datasyncpro"
-    "syncvault"
-    "filestore"
-    "dataxpresspro"
-    "swiftfileshare"
-    "turboconnect"
-    "rapidstorage"
-    "prodatahub"
-    "uptodata"
-    "maxtransfer"
-    "datahubplus"
-    "cloudftpxpro"
-    "dataxpressshare"
-    "sharedata"
-    "datasyncplus"
-    "rapidsharepro"
-    "swiftupload"
-  )
-
-  for server in "${common_ftp_servers[@]}"; do
-    for port in "${common_ftp_ports[@]}"; do
-      ftp_server="${server}.${target_site}"
-      if nc -z -w 5 "$ftp_server" "$port"; then
-        echo "FTP Server Found on port $port! $ftp_server"
-        return
-      fi
-    done
-  done
-
-  echo "No FTP Server Found."
-}
-' >> ~/.bashrc
-echo '
-distroux() {
-  banner='
-  ╔═══╦══╦═══╦════╦═══╦═══╦╗─╔╦═╗╔═╗
-  ╚╗╔╗╠╣╠╣╔═╗║╔╗╔╗║╔═╗║╔═╗║║─║╠╗╚╝╔╝
-  ─║║║║║║║╚══╬╝║║╚╣╚═╝║║─║║║─║║╚╗╔╝
-  ─║║║║║║╚══╗║─║║─║╔╗╔╣║─║║║─║║╔╝╚╗
-  ╔╝╚╝╠╣╠╣╚═╝║─║║─║║║╚╣╚═╝║╚═╝╠╝╔╗╚╗
-  ╚═══╩══╩═══╝─╚╝─╚╝╚═╩═══╩═══╩═╝╚═╝'
-
-  echo "$banner"
   read -p "What distro you want to use?" distro
 
   if proot-distro login "$distro"; then
