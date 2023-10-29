@@ -105,3 +105,16 @@ for port in "${common_ftp_ports[@]}"; do
   echo "No FTP Server Found."
 }
 ' >> ~/.bashrc
+echo '
+ftphorse(){ 
+echo "FTPhorse Panel"
+echo "Welcome!"
+echo "Insert your target: (put FTP server, like ftp.fau.de)"
+read site
+if response=$(curl -s "$site:21"); then
+  echo "$response"
+else
+  echo "Error: No Response."
+fi
+}
+' >> ~/.bashrc
