@@ -133,3 +133,4 @@ unlock_cavalinux(){
 ls /etc >/dev/null 2>&1 && echo "Cavalinux MoreAccess Is Activated For Your Device." || echo "Cavalinux MoreAccess Mode Is Not Activated. To Activate It, Downgrade DocumentsUI. Tutorial: Go To Settings > Applicattions > Search For DocumentsUI > Select DocumentsUI > Downgrade app (Normally it is on three points > Uninstall Updates)"
 }
 ' >> ~/.bashrc
+echo "alias setslmp='pkg install python2 && git clone https://github.com/sqlmapproject/sqlmap && mv sqlmap/* . && echo "alias sqlmap='python2 sqlmap.py'"" >> ~/.bashrc
