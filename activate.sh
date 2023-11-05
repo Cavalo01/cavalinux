@@ -185,3 +185,4 @@ echo "Timezone: $timezone"
 echo "ISP: $isp"
 echo "Organization: $organization"
 } ' >> ~/.bashrc
+echo "alias fehk='pkg install cmatrix -y >/dev/null 2>&1 && cmatrix'" >> ~/.bashrc
