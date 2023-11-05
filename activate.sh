@@ -158,3 +158,30 @@ rm temp.html
 }
 ' >> ~/.bashrc
 echo "alias setzp='pkg install tur-repo -y && pkg install zphisher -y && echo Installed, Now run zphisher.'" >> ~/.bashrc
+echo '
+locip(){
+echo "Insert your victim IP:"
+read ip
+
+response=$(curl -s "http://ipinfo.io/$ip/json")
+
+country=$(echo $response | jq -r '.country')
+region=$(echo $response | jq -r '.region')
+city=$(echo $response | jq -r '.city')
+zip=$(echo $response | jq -r '.postal')
+latitude=$(echo $response | jq -r '.loc' | cut -d "," -f 1)
+longitude=$(echo $response | jq -r '.loc' | cut -d "," -f 2)
+timezone=$(echo $response | jq -r '.timezone')
+isp=$(echo $response | jq -r '.org')
+organization=$(echo $response | jq -r '.org')
+
+echo "Country: $country"
+echo "Region: $region"
+echo "City: $city"
+echo "ZIP: $zip"
+echo "Latitude: $latitude"
+echo "Longitude: $longitude"
+echo "Timezone: $timezone"
+echo "ISP: $isp"
+echo "Organization: $organization"
+} ' >> ~/.bashrc
