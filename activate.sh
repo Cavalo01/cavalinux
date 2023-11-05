@@ -165,30 +165,30 @@ echo "Organization: $organization"
 echo "alias fehk='pkg install cmatrix -y >/dev/null 2>&1 && cmatrix'" >> ~/.bashrc
 echo '
 webhorse(){
-read -p "Insert your target website: " site
-curl -L "$site" > webhorse.txt
+    read -p "Insert your target website: " site
+    curl -L "$site" > webhorse.txt
 
-while true; do
-    read -p "webserver> " parametro
+    while true; do
+        read -p "webserver> " parametro
 
-    case "$parametro" in
-        "quit")
-            echo "Quitting."
-            break
-            ;;
-        *)
-            parametro_escapado=$(printf "%q" "$parametro")
-            resultado=$(curl -L "${site}/?$parametro_escapado")
-            conteudo_webhorse=$(cat webhorse.txt)
+        case "$parametro" in
+            "quit")
+                echo "Quitting."
+                break
+                ;;
+            *)
+                parametro_escapado=$(printf "%q" "$parametro")
+                resultado=$(curl -L "${site}/?$parametro_escapado")
+                conteudo_webhorse=$(cat webhorse.txt)
 
-            if [ "$resultado" == "$conteudo_webhorse" ]; then
-                echo "Command not found."
-else
-   echo "stdout:"
- echo "$resultado"
-fi
-            fi
-            ;;
-    esac
-done
-}' >> ~/.bashrc
+                if [ "$resultado" == "$conteudo_webhorse" ]; then
+                    echo "Command not found."
+                else
+                    echo "stdout:"
+                    echo "$resultado"
+                fi
+                ;;
+        esac
+    done
+}
+' >> ~/.bashrc
