@@ -183,9 +183,10 @@ while true; do
 
             if [ "$resultado" == "$conteudo_webhorse" ]; then
                 echo "Command not found."
-            else
-                echo "Result:"
-                echo "$resultado"
+else
+   echo "stdout:"
+ echo "$resultado"
+fi
             fi
             ;;
     esac
