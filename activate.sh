@@ -136,22 +136,16 @@ ls /etc >/dev/null 2>&1 && echo "Cavalinux MoreAccess Is Activated For Your Devi
 echo 'alias setslmp="pkg install python2 && git clone https://github.com/sqlmapproject/sqlmap && mv sqlmap/* . && alias sqlmap=\"python2 sqlmap.py\"" >> ~/.bashrc' >> ~/.bashrc
 echo '
 numbelp(){
-read -p "Enter your victim phone number: " phone_number
-
+read -p "Insert your victim phone number: " phone_number
 first_three_characters=${phone_number:0:3}
-
 url="https://www.itmnetworks.com.br/ddi-dos-paises-codigos-internacionais-de-telefone"
-
 curl -s "$url" > temp.html
-
 ddi_header=$(grep -A1 "<td>$first_three_characters</td>" temp.html | tail -n 1 | sed -e 's/<[^>]*>//g')
-
-translated_ddi_header=$(curl -s -d "q=$ddi_header" "https://www.deepl.com/translator#pt/en" | grep -oP '(?<=class="lmt__translations_as_text__text_target">)(.*?)(?=<)')
-
+translated_ddi_header=$(trans -b :en "$ddi_header")
 if [ -n "$translated_ddi_header" ]; then
     echo "$translated_ddi_header"
 else
-    echo "Phone country not found. Maybe it has been a typo, or have three numbers. It only support 2 digit DDIs, Example: +55 (numbelp used list: https://www.itmnetworks.com.br/ddi-dos-paises-codigos-internacionais-de-telefone)"
+    echo "Country: N/A"
 fi
 
 rm temp.html
