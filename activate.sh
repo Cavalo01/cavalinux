@@ -165,7 +165,6 @@ echo "Organization: $organization"
 echo "alias fehk='pkg install cmatrix -y >/dev/null 2>&1 && cmatrix'" >> ~/.bashrc
 echo '
 webhorse(){
-webhorse(){
 read -p "Insert your target website: " site
 curl -L "$site" > webhorse.txt
 
