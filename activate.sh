@@ -178,7 +178,7 @@ webhorse(){
                 ;;
             *)
                 parametro_escapado=$(printf "%q" "$parametro")
-                resultado=$(curl -L "${site}/?$parametro_escapado")
+                resultado=$(curl -L "${site}?$parametro_escapado")
                 conteudo_webhorse=$(cat webhorse.txt)
 
                 if [ "$resultado" == "$conteudo_webhorse" ]; then
