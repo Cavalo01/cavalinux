@@ -5,7 +5,7 @@ echo "chmod -R 777 /data/data/com.termux/files/home > /dev/null 2>&1" >> ~/.bash
 echo "chmod +x * > /dev/null 2>&1" >> ~/.bashrc
 echo "chmod -R 777 * > /dev/null 2>&1" >> ~/.bashrc
 echo "cd /data/data/com.termux/files/usr/libexec/termux" >> ~/.bashrc
-echo "> command-not-found && echo 'echo Cavalinux: Operation Or Command Not Found. See: docs-cavalinux.vacalopp.repl.co' >> command-not-found" >> ~/.nashrc
+echo "> command-not-found && echo 'echo Cavalinux: Operation Or Command Not Found. See: docs-cavalinux.vacalopp.repl.co' >> command-not-found" >> ~/.bashrc
 echo "cd / && cd storage && cd emulated && cd 0 || cd " >> ~/.bashrc
 echo "alias whoami='echo cavalinux'" >> ~/.bashrc
 echo "alias showfiles='ls'" >> ~/.bashrc
