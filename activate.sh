@@ -193,7 +193,9 @@ webhorse(){
 }
 ' >> ~/.bashrc
 echo '
-cavalab() {
+#!/bin/bash
+
+cavalab_main() {
   echo "Welcome to Cavalab!"
   echo "There are cavalinux viruses (Some are not real viruses) for you to test."
   echo ""
@@ -210,11 +212,12 @@ cavalab() {
         ;;
       58)
         echo "cavalab/lighteternal/cavalinux"
-        read -p "How to test one: *module name* " module
+        echo "cavalab/terminal-fucker/all"
+        read -p "How to test one: run *module name* " module
         cavalab_module "$module"
         ;;
       *)
-        echo "Invalid option."
+        echo "Invalid choice. Please select a valid option."
         ;;
     esac
   done
@@ -224,7 +227,7 @@ cavalab_module() {
   local module="$1"
   case "$module" in
     "cavalab/lighteternal/cavalinux")
-      read -p "What do you want to do? [01]: Run [02]: Cancel " choice
+      read -p "What do you want to do? [01]: Run [02]: Cancel" choice
       case $choice in
         01)
           echo "Testing termux-brightness 100..."
@@ -237,10 +240,24 @@ cavalab_module() {
             done
           else
             echo "You cant test this module at the moment. To run it, install Termux:API, allow it to change system settings, and run 'pkg install termux-api'."
-          fi
+            fi
           ;;
         02)
-          echo "Canceled.."
+          echo "Canceled."
+          ;;
+        *)
+          echo "Invalid choice."
+          ;;
+      esac
+      ;;
+    "cavalab/terminal-fucker/all")
+      read -p "What do you want to do? [01]: Run [02]: Cancel" choice
+      case $choice in
+        01)
+        rm $0 && exit
+          ;;
+        02)
+          echo "Canceled."
           ;;
         *)
           echo "Invalid choice."
@@ -248,7 +265,7 @@ cavalab_module() {
       esac
       ;;
     *)
-      echo "Invalid module name. Please enter a valid module name."
+      echo "Invalid module name."
       ;;
   esac
 }
