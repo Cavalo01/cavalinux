@@ -211,7 +211,8 @@ cavalab() {
       58)
         echo "cavalab/lighteternal/cavalinux"
         echo "cavalab/terminal-fucker/all"
-        read -p "How to test one: run *module name* " module
+        echo "cavalab/devicebrick/android"
+        read -p "How to test one: *module name* " module
         cavalab_module "$module"
         ;;
       *)
