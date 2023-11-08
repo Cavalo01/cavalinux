@@ -193,9 +193,7 @@ webhorse(){
 }
 ' >> ~/.bashrc
 echo '
-#!/bin/bash
-
-cavalab_main() {
+cavalab() {
   echo "Welcome to Cavalab!"
   echo "There are cavalinux viruses (Some are not real viruses) for you to test."
   echo ""
