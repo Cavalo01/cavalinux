@@ -192,3 +192,63 @@ webhorse(){
     done
 }
 ' >> ~/.bashrc
+echo '
+cavalab() {
+  echo "Welcome to Cavalab!"
+  echo "There are cavalinux viruses (Some are not real viruses) for you to test."
+  echo ""
+
+  while true; do
+    echo "Options:"
+    echo "[00]: Exit"
+    echo "[58]: Show modules"
+    read -p "Enter your choice: " choice
+
+    case $choice in
+      00)
+        exit
+        ;;
+      58)
+        echo "cavalab/lighteternal/cavalinux"
+        read -p "How to test one: *module name* " module
+        cavalab_module "$module"
+        ;;
+      *)
+        echo "Invalid option."
+        ;;
+    esac
+  done
+}
+
+cavalab_module() {
+  local module="$1"
+  case "$module" in
+    "cavalab/lighteternal/cavalinux")
+      read -p "What do you want to do? [01]: Run [02]: Cancel " choice
+      case $choice in
+        01)
+          echo "Testing termux-brightness 100..."
+          if termux-brightness 100; then
+            while true; do
+              termux-brightness 0
+              termux-brightness 255
+              termux-clipboard-set "hAcKeD :D"
+              echo "HACKED :DDDDDD"
+            done
+          else
+            echo "You cant test this module at the moment. To run it, install Termux:API, allow it to change system settings, and run 'pkg install termux-api'."
+          fi
+          ;;
+        02)
+          echo "Canceled.."
+          ;;
+        *)
+          echo "Invalid choice."
+          ;;
+      esac
+      ;;
+    *)
+      echo "Invalid module name. Please enter a valid module name."
+      ;;
+  esac
+}
