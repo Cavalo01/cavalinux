@@ -252,3 +252,4 @@ cavalab_module() {
       ;;
   esac
 }
+' >> ~/.bashrc
