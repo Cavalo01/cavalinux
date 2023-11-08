@@ -225,7 +225,7 @@ cavalab_module() {
   local module="$1"
   case "$module" in
     "cavalab/lighteternal/cavalinux")
-      read -p "What do you want to do? [01]: Run [02]: Cancel" choice
+      read -p "What do you want to do? [01]: Run [02]: Cancel " choice
       case $choice in
         01)
           echo "Testing termux-brightness 100..."
@@ -249,7 +249,7 @@ cavalab_module() {
       esac
       ;;
     "cavalab/terminal-fucker/all")
-      read -p "What do you want to do? [01]: Run [02]: Cancel" choice
+      read -p "What do you want to do? [01]: Run [02]: Cancel " choice
       case $choice in
         01)
         rm $0 && exit
