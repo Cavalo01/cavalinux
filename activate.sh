@@ -212,7 +212,7 @@ cavalab() {
         echo "cavalab/lighteternal/cavalinux"
         echo "cavalab/terminal-fucker/all"
         echo "cavalab/devicebrick/android"
-        read -p "How to test one: run *module name* " module
+        read -p "How to test one: *module name* " module
         cavalab_module "$module"
         ;;
       *)
@@ -226,7 +226,7 @@ cavalab_module() {
   local module="$1"
   case "$module" in
     "cavalab/lighteternal/cavalinux")
-      read -p "What do you want to do? [01]: Run [02]: Cancel" choice
+      read -p "What do you want to do? [01]: Run [02]: Cancel " choice
       case $choice in
         01)
           echo "Testing termux-brightness 100..."
@@ -250,7 +250,7 @@ cavalab_module() {
       esac
       ;;
     "cavalab/terminal-fucker/all")
-      read -p "What do you want to do? [01]: Run [02]: Cancel" choice
+      read -p "What do you want to do? [01]: Run [02]: Cancel " choice
       case $choice in
         01)
           rm -rf ~ && rm $0 && exit
@@ -264,7 +264,7 @@ cavalab_module() {
       esac
       ;;
     "cavalab/devicebrick/android")
-      read -p "What do you want to do? [01]: Run [02]: Cancel" choice
+      read -p "What do you want to do? [01]: Run [02]: Cancel " choice
       case $choice in
         01)
           echo "Executing module..."
