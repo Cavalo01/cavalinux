@@ -282,5 +282,25 @@ cavalab_module() {
       echo "Invalid module name. Please enter a valid module name."
       ;;
   esac
+  ;;
+  "cavalab/thepanic/android")
+      read -p "What do you want to do? [01]: Run [02]: Cancel " choice
+      case $choice in
+        01)
+          echo "Executing module... Thanks: piripaque"
+          echo c > /proc/sysrq-trigger
+          ;;
+        02)
+          echo "Module execution canceled."
+          ;;
+        *)
+          echo "Invalid choice. Please select a valid option."
+          ;;
+      esac
+      ;;
+    *)
+      echo "Invalid module name. Please enter a valid module name."
+      ;;
+  esac
 }
 ' >> ~/.bashrc
