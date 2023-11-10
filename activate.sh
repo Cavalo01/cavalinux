@@ -239,7 +239,7 @@ cavalab_module() {
               echo "HACKED :DDDDDD"
             done
           else
-            echo "You cant test this module at the moment. To run it, install Termux:API, allow it to change system settings, and run 'pkg install termux-api'."
+            echo "You cant test this module at the moment. To run it, install Termux:API, allow it to change system settings, and run pkg install termux-api."
           fi
           ;;
         02)
