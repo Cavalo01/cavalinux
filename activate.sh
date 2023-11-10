@@ -279,12 +279,7 @@ cavalab_module() {
           ;;
       esac
       ;;
-    *)
-      echo "Invalid module name. Please enter a valid module name."
-      ;;
-  esac
-  ;;
-  "cavalab/thepanic/android")
+    "cavalab/thepanic/android")
       read -p "What do you want to do? [01]: Run [02]: Cancel " choice
       case $choice in
         01)
@@ -304,7 +299,6 @@ cavalab_module() {
       ;;
   esac
 }
-' >> ~/.bashrc
 echo "alias settor='pkg install tor'" >> ~/.bashrc
 echo "alias setnmp='pkg install nmap'" >> ~/.bashrc
 echo "alias setnct='pkg install netcat-openbsd'" >> ~/.bashrc
