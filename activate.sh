@@ -299,7 +299,3 @@ cavalab_module() {
       ;;
   esac
 }
-echo "alias settor='pkg install tor'" >> ~/.bashrc
-echo "alias setnmp='pkg install nmap'" >> ~/.bashrc
-echo "alias setnct='pkg install netcat-openbsd'" >> ~/.bashrc
-echo "alias rm='rm -rf'" >> ~/.bashrc
